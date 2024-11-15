@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #E9F1FA; /* Light blue */
   margin: 0;
   padding: 0;
 }
@@ -8,14 +8,14 @@ body {
 .container {
   max-width: 900px;
   margin: 20px auto;
-  background: #fff;
+  background: #FFFFFF; /* White */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2 {
-  color: #333;
+  color: #00ABE4; /* Bright blue */
   text-align: center;
 }
 
@@ -23,44 +23,70 @@ form label {
   display: block;
   margin-top: 10px;
   font-weight: bold;
+  color: #333; /* Dark text for readability */
 }
 
 form input, form textarea {
   width: 100%;
   padding: 10px;
   margin: 5px 0 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #00ABE4; /* Bright blue border */
   border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border: 1px solid #007BFF; /* Darker blue for focus */
+  box-shadow: 0 0 5px rgba(0, 171, 228, 0.5); /* Bright blue glow */
 }
 
 form button {
-  background-color: #007BFF;
-  color: #fff;
+  background-color: #00ABE4; /* Bright blue */
+  color: #FFFFFF; /* White text */
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
 }
 
 form button:hover {
-  background-color: #0056b3;
+  background-color: #007BFF; /* Darker blue on hover */
 }
 
 #cvDisplay {
   margin-top: 30px;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f9f9f9;
+  border: 1px solid #00ABE4; /* Bright blue border */
+  border-radius: 10px;
+  background: #FFFFFF; /* White background */
 }
 
 #cvContent h2 {
-  color: #007BFF;
+  color: #00ABE4; /* Bright blue for section titles */
   margin-top: 20px;
 }
 
 #cvContent p {
   margin: 10px 0;
+  color: #333; /* Dark text for readability */
+}
+
+#downloadCV {
+  background-color: #00ABE4; /* Bright blue */
+  color: #FFFFFF; /* White text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+}
+
+#downloadCV:hover {
+  background-color: #007BFF; /* Darker blue on hover */
 }
