@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Builder</title>
+  <title>Dynamic CV Builder</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>CV Builder</h1>
+    <h1>Dynamic CV Builder</h1>
     <form id="cvForm">
+      <!-- Personal Information -->
       <h2>Personal Information</h2>
-      <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Enter your full name" required>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
       
       <label for="email">Email:</label>
       <input type="email" id="email" placeholder="Enter your email" required>
@@ -20,20 +21,36 @@
       <label for="phone">Phone:</label>
       <input type="text" id="phone" placeholder="Enter your phone number" required>
       
-      <h2>Education</h2>
-      <textarea id="education" rows="5" placeholder="Enter your education details" required></textarea>
-      
-      <h2>Experience</h2>
-      <textarea id="experience" rows="5" placeholder="Enter your work experience details" required></textarea>
-      
+      <!-- Skills -->
       <h2>Skills</h2>
-      <textarea id="skills" rows="3" placeholder="Enter your skills" required></textarea>
+      <textarea id="skills" rows="3" placeholder="List your skills" required></textarea>
+      
+      <!-- Education -->
+      <h2>Education</h2>
+      <textarea id="education" rows="5" placeholder="Describe your education" required></textarea>
+      
+      <!-- Experience -->
+      <h2>Work Experience</h2>
+      <textarea id="experience" rows="5" placeholder="List your work experience" required></textarea>
+      
+      <!-- Languages -->
+      <h2>Languages</h2>
+      <textarea id="languages" rows="3" placeholder="Languages you speak" required></textarea>
+      
+      <!-- Awards and Certifications -->
+      <h2>Awards & Certifications</h2>
+      <textarea id="awards" rows="5" placeholder="List your awards and certifications"></textarea>
+      
+      <!-- References -->
+      <h2>References</h2>
+      <textarea id="references" rows="5" placeholder="List your references"></textarea>
       
       <button type="button" id="generateCV">Generate CV</button>
     </form>
 
+    <!-- Preview Section -->
     <div id="cvDisplay" style="display:none;">
-      <h1>Generated CV</h1>
+      <h1>Generated CV Preview</h1>
       <div id="cvContent"></div>
       <button id="downloadCV">Download as Word</button>
     </div>
