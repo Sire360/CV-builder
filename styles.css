@@ -1,68 +1,66 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 20px auto;
+  background: #fff;
   padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
+h1, h2 {
   color: #333;
+  text-align: center;
 }
 
-form, #cvDisplay {
-  margin-top: 20px;
-}
-
-label {
+form label {
   display: block;
-  margin-bottom: 5px;
-  color: #555;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-input, textarea {
+form input, form textarea {
   width: 100%;
-  margin-bottom: 15px;
   padding: 10px;
+  margin: 5px 0 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
-button {
+form button {
   background-color: #007BFF;
-  color: white;
-  padding: 10px 15px;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
 
-button:hover {
+form button:hover {
   background-color: #0056b3;
 }
 
-#cvContent {
+#cvDisplay {
+  margin-top: 30px;
+  padding: 20px;
   border: 1px solid #ddd;
-  padding: 15px;
-  background: #f9f9f9;
   border-radius: 5px;
+  background: #f9f9f9;
 }
 
 #cvContent h2 {
-  color: #333;
-  margin-bottom: 10px;
+  color: #007BFF;
+  margin-top: 20px;
 }
 
 #cvContent p {
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
