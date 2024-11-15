@@ -90,3 +90,25 @@ form button:hover {
 #downloadCV:hover {
   background-color: #007BFF; /* Darker blue on hover */
 }
+
+button {
+  background-color: #00ABE4; /* Bright blue */
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+button:hover {
+  background-color: #007BFF;
+}
+
+button:active {
+  background-color: #0056b3;
+}
