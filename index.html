@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CV Builder</h1>
+    <form id="cvForm">
+      <h2>Personal Information</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" placeholder="Enter your phone number" required>
+      
+      <h2>Education</h2>
+      <textarea id="education" rows="5" placeholder="Enter your education details" required></textarea>
+      
+      <h2>Experience</h2>
+      <textarea id="experience" rows="5" placeholder="Enter your work experience details" required></textarea>
+      
+      <h2>Skills</h2>
+      <textarea id="skills" rows="3" placeholder="Enter your skills" required></textarea>
+      
+      <button type="button" id="generateCV">Generate CV</button>
+    </form>
+
+    <div id="cvDisplay" style="display:none;">
+      <h1>Generated CV</h1>
+      <div id="cvContent"></div>
+      <button id="downloadCV">Download as Word</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
