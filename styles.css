@@ -45,14 +45,13 @@ body {
 
 .left, .right {
     flex: 1;
-    padding: 20px;
+    padding: 10px;
 }
 
 .left h2, .right h2 {
     background: #00b6c4;
-    color: #fff;
-    padding: 10px;
-    margin: 20px 0;
+    color: white;
+    padding: 5px;
     border-radius: 5px;
 }
 
@@ -72,21 +71,9 @@ body {
     .main {
         flex-direction: column;
     }
+
     .left, .right {
         flex: none;
         width: 100%;
     }
-}
-
-.img-area {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 20px auto;
-    border: 10px groove deepskyblue;
-    display: none; /* Hidden initially if no image is uploaded */
-}
-.img-area img {
-    width: 100%;
 }
