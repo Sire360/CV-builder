@@ -77,3 +77,16 @@ body {
         width: 100%;
     }
 }
+
+.img-area {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 10px groove deepskyblue;
+    display: none; /* Hidden initially if no image is uploaded */
+}
+.img-area img {
+    width: 100%;
+}
