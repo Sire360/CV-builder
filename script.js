@@ -1,12 +1,8 @@
-// Debugging: Ensure the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
-    // Event listener for the Generate CV button
+    // Generate CV Preview
     document.getElementById('generateCV').addEventListener('click', () => {
-        console.log('Generate CV button clicked');
-
-        // Fetch input values
         const name = document.getElementById('name').value.trim();
         const title = document.getElementById('title').value.trim();
         const email = document.getElementById('email').value.trim();
@@ -17,15 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const languages = document.getElementById('languages').value.trim();
         const awards = document.getElementById('awards').value.trim();
         const references = document.getElementById('references').value.trim();
-
-        // Log the fetched values for debugging
-        console.log({ name, title, email, phone, skills, education, experience, languages, awards, references });
-
-        // Check if required fields are filled
-        if (!name || !title || !email || !phone) {
-            alert('Please fill in all required fields.');
-            return;
-        }
 
         // Set preview fields
         document.getElementById('previewName').textContent = name;
@@ -53,8 +40,54 @@ document.addEventListener('DOMContentLoaded', () => {
             imgArea.style.display = 'none'; // Hide if no image
         }
 
-        // Show the CV preview section
         document.getElementById('cvDisplay').style.display = 'block';
         console.log('CV preview generated successfully');
+    });
+
+    // Download as Word
+    document.getElementById('downloadCV').addEventListener('click', () => {
+        const cvDisplay = document.getElementById('cvDisplay').innerHTML;
+
+        const docContent = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>Generated CV</title>
+                <style>
+                    body { font-family: Arial, sans-serif; line-height: 1.6; }
+                    h1, h3 { color: #00ABE4; }
+                    ul { list-style: disc; padding-left: 20px; }
+                </style>
+            </head>
+            <body>
+                ${cvDisplay}
+            </body>
+            </html>
+        `;
+
+        const blob = new Blob(['\ufeff', docContent], { type: 'application/msword' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'Generated_CV.doc';
+        link.click();
+        console.log('Word document downloaded');
+    });
+
+    // Download as PDF
+    document.getElementById('downloadPDF').addEventListener('click', () => {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+
+        const content = document.getElementById('cvDisplay');
+        pdf.html(content, {
+            callback: function (doc) {
+                doc.save('Generated_CV.pdf');
+                console.log('PDF document downloaded');
+            },
+            x: 10,
+            y: 10,
+        });
     });
 });
