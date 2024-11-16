@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const awards = document.getElementById('awards').value.trim();
         const references = document.getElementById('references').value.trim();
 
-        // Set preview fields
+        // Populate preview
         document.getElementById('previewName').textContent = name;
         document.getElementById('previewTitle').textContent = title;
         document.getElementById('previewEmail').textContent = email;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             reader.readAsDataURL(imgInput.files[0]);
         } else {
-            imgArea.style.display = 'none'; // Hide if no image
+            imgArea.style.display = 'none';
         }
 
         document.getElementById('cvDisplay').style.display = 'block';
@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Download as Word
     document.getElementById('downloadCV').addEventListener('click', () => {
-        const cvDisplay = document.getElementById('cvDisplay').innerHTML;
+        const cvContent = document.querySelector('.container > #cvDisplay').cloneNode(true);
+        cvContent.querySelectorAll('button').forEach(button => button.remove());
 
         const docContent = `
             <!DOCTYPE html>
@@ -58,10 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     body { font-family: Arial, sans-serif; line-height: 1.6; }
                     h1, h3 { color: #00ABE4; }
                     ul { list-style: disc; padding-left: 20px; }
+                    .header { text-align: center; margin-bottom: 20px; }
+                    .img-area img { border-radius: 50%; width: 150px; height: 150px; }
+                    .main { display: flex; flex-wrap: wrap; }
+                    .left, .right { flex: 1; padding: 10px; }
+                    .left h2, .right h2 { background: #00b6c4; color: white; padding: 5px; border-radius: 5px; }
                 </style>
             </head>
             <body>
-                ${cvDisplay}
+                ${cvContent.innerHTML}
             </body>
             </html>
         `;
@@ -72,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.href = url;
         link.download = 'Generated_CV.doc';
         link.click();
-        console.log('Word document downloaded');
     });
 
     // Download as PDF
@@ -80,11 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const { jsPDF } = window.jspdf;
         const pdf = new jsPDF();
 
-        const content = document.getElementById('cvDisplay');
-        pdf.html(content, {
+        const cvContent = document.querySelector('.container > #cvDisplay').cloneNode(true);
+        cvContent.querySelectorAll('button').forEach(button => button.remove());
+
+        pdf.html(cvContent, {
             callback: function (doc) {
                 doc.save('Generated_CV.pdf');
-                console.log('PDF document downloaded');
             },
             x: 10,
             y: 10,
