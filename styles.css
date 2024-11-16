@@ -1,127 +1,79 @@
-/* General Styles */
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #E9F1FA; /* Light blue */
-  margin: 0;
-  padding: 0;
+    background: #00b6c4;
 }
 
-/* Container Styles */
 .container {
-  max-width: 900px;
-  margin: 20px auto;
-  background: #FFFFFF; /* White */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: #f5f5f5;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Heading Styles */
-h1, h2 {
-  color: #00ABE4; /* Bright blue */
-  text-align: center;
+/* Header Section */
+.header {
+    text-align: center;
 }
 
-/* Form Labels */
-form label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #333; /* Dark text for readability */
+.img-area {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 10px groove deepskyblue;
 }
 
-/* Form Inputs and Textareas */
-form input, form textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0 15px;
-  border: 1px solid #00ABE4; /* Bright blue border */
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-size: 16px;
+.img-area img {
+    width: 100%;
 }
 
-/* Focus States */
-form input:focus, form textarea:focus {
-  outline: none;
-  border: 1px solid #007BFF; /* Darker blue for focus */
-  box-shadow: 0 0 5px rgba(0, 171, 228, 0.5); /* Bright blue glow */
+/* Content Sections */
+.main {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-/* Form Buttons */
-form button {
-  background-color: #00ABE4; /* Bright blue */
-  color: #FFFFFF; /* White text */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block;
-  margin: 20px auto;
-  transition: background-color 0.3s ease;
-  font-size: 16px;
+.left, .right {
+    flex: 1;
+    padding: 20px;
 }
 
-form button:hover {
-  background-color: #007BFF; /* Darker blue on hover */
+.left h2, .right h2 {
+    background: #00b6c4;
+    color: #fff;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
 }
 
-/* CV Display Section */
-#cvDisplay {
-  margin-top: 30px;
-  padding: 20px;
-  border: 1px solid #00ABE4; /* Bright blue border */
-  border-radius: 10px;
-  background: #FFFFFF; /* White background */
+.left p, .right p {
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
-#cvContent h2 {
-  color: #00ABE4; /* Bright blue for section titles */
-  margin-top: 20px;
+.left ul, .right ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    line-height: 1.6;
 }
 
-#cvContent p {
-  margin: 10px 0;
-  color: #333; /* Dark text for readability */
-  font-size: 16px;
-}
-
-/* Download Buttons */
-#downloadCV, #downloadPDF {
-  background-color: #00ABE4; /* Bright blue */
-  color: #FFFFFF; /* White text */
-  padding: 15px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  margin: 10px auto;
-  width: 100%;
-  max-width: 300px;
-  transition: background-color 0.3s ease;
-}
-
-#downloadCV:hover, #downloadPDF:hover {
-  background-color: #007BFF; /* Darker blue on hover */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-  }
-
-  form input, form textarea {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  form button, #downloadCV, #downloadPDF {
-    font-size: 14px;
-    padding: 10px 15px;
-  }
-
-  #cvContent p {
-    font-size: 14px;
-  }
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .main {
+        flex-direction: column;
+    }
+    .left, .right {
+        flex: none;
+        width: 100%;
+    }
 }
